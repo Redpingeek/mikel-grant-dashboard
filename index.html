@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mikel Grant Jewellery: Project Command Center</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<!-- GLOSSED: named, picked, listing, spot, click from Google -->
+<style>
+  :root{
+    --ground:#eef1f5; --card:#fdfefe; --ink:#1f2a33; --muted:#63737f;
+    --primary:#2a4a6b; --primary-soft:#e0e8f0; --silver:#c3cfd9; --amber:#b5813f;
+    --amber-soft:#f4ead9; --line:#dbe2e9;
+    --shadow:0 1px 2px rgba(31,42,51,.04),0 8px 26px rgba(31,42,51,.07);
+    --serif:'Cormorant Garamond','Iowan Old Style',Georgia,serif;
+    --sans:'Nunito Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#101720; --card:#171f29; --ink:#e6edf3; --muted:#8fa0ae;
+      --primary:#7fb0d8; --primary-soft:#1b2733; --silver:#33414e;
+      --amber:#d3a05f; --amber-soft:#251e13; --line:#242f3a;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#101720; --card:#171f29; --ink:#e6edf3; --muted:#8fa0ae;
+    --primary:#7fb0d8; --primary-soft:#1b2733; --silver:#33414e;
+    --amber:#d3a05f; --amber-soft:#251e13; --line:#242f3a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 72px;}
+  a{color:var(--primary);}
+
+  .masthead{background:linear-gradient(135deg,#2a4a6b,#1d3550);color:#f2f7fb;
+    border-radius:0 0 20px 20px;padding:36px 30px 30px;margin-bottom:26px;position:relative;overflow:hidden;}
+  .masthead::after{content:"\223F";position:absolute;right:26px;top:24px;font-size:62px;
+    color:rgba(242,247,251,.10);line-height:1;}
+  .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(242,247,251,.72);margin:0 0 12px;}
+  .masthead h1{font-family:var(--serif);font-weight:600;font-size:clamp(29px,5.4vw,43px);
+    margin:0;line-height:1.05;letter-spacing:.01em;text-wrap:balance;}
+  .masthead .sub{margin:9px 0 18px;color:rgba(242,247,251,.88);font-size:15px;font-style:italic;}
+  .status{display:inline-flex;align-items:center;gap:8px;background:rgba(242,247,251,.14);
+    border:1px solid rgba(242,247,251,.3);color:#f2f7fb;padding:6px 13px;border-radius:100px;
+    font-size:12.5px;letter-spacing:.04em;}
+  .dot{width:8px;height:8px;border-radius:50%;background:#8fd0c8;box-shadow:0 0 0 4px rgba(143,208,200,.22);}
+
+  section{margin:30px 0;}
+  .label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);
+    font-weight:700;margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  .label::before{content:"\223F";font-size:13px;}
+  .label::after{content:"";height:1px;flex:1;background:var(--line);}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);}
+
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:700px){.timeline{grid-template-columns:1fr;}}
+  .milestone{padding:18px;}
+  .m-ico{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;margin-bottom:11px;}
+  .m-done .m-ico{background:var(--primary);color:#f2f7fb;}
+  .m-next .m-ico{background:transparent;border:2px dashed var(--silver);color:var(--muted);}
+  .m-date{font-size:12px;color:var(--muted);letter-spacing:.03em;}
+  .m-title{font-family:var(--serif);font-weight:600;font-size:20px;margin:2px 0 4px;}
+  .m-note{font-size:13px;color:var(--muted);}
+  .m-tag{display:inline-block;margin-top:9px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:3px 8px;border-radius:6px;}
+  .m-done .m-tag{background:var(--primary-soft);color:var(--primary);}
+  .m-next .m-tag{background:var(--amber-soft);color:var(--amber);}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:700px){.metrics{grid-template-columns:repeat(2,1fr);}}
+  .metric{padding:18px 14px;text-align:center;}
+  .metric .n{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1;color:var(--primary);
+    font-variant-numeric:tabular-nums;}
+  .metric .k{font-size:12px;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+
+  .panel{padding:6px 4px;}
+  .row{display:flex;gap:12px;padding:13px 16px;align-items:flex-start;}
+  .row + .row{border-top:1px solid var(--line);}
+  .check{flex:none;width:20px;height:20px;border-radius:50%;background:var(--primary);color:#f2f7fb;
+    display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;}
+  .row b{font-weight:700;}
+  .row .s{color:var(--muted);}
+
+  .cite-head{padding:18px 18px 4px;}
+  .cite-head .big{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);line-height:1.28;}
+  .cite-head .big em{color:var(--primary);font-style:italic;}
+  .tablewrap{overflow-x:auto;}
+  .mtable{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;min-width:480px;}
+  .mtable th,.mtable td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);}
+  .mtable th{font-family:var(--serif);font-weight:600;font-size:14px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.06em;}
+  .mtable td:first-child{color:var(--muted);}
+  .mtable td.v{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);
+    font-variant-numeric:tabular-nums;}
+  .win{color:var(--primary);font-weight:700;}
+  .watch{padding:14px 18px;}
+  .watch p{margin:0 0 10px;font-size:14.5px;}
+  .note{padding:10px 18px 14px;font-size:13px;color:var(--muted);}
+  .lead{padding:2px 18px 8px;margin:0;font-size:13.5px;color:var(--muted);}
+
+  .progress-head{display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px 4px;gap:12px;flex-wrap:wrap;}
+  .progress-head .t{font-family:var(--serif);font-weight:600;font-size:20px;}
+  .progress-head .c{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;}
+  .bar{height:7px;background:var(--primary-soft);border-radius:100px;margin:10px 18px 6px;overflow:hidden;}
+  .bar > i{display:block;height:100%;width:0;background:var(--primary);border-radius:100px;transition:width .35s ease;}
+  .item{display:flex;gap:12px;align-items:flex-start;padding:12px 18px;border-top:1px solid var(--line);cursor:pointer;}
+  .item input{appearance:none;-webkit-appearance:none;flex:none;width:19px;height:19px;margin:2px 0 0;
+    border:1.5px solid var(--silver);border-radius:5px;background:var(--card);cursor:pointer;position:relative;transition:.15s;}
+  .item input:checked{background:var(--primary);border-color:var(--primary);}
+  .item input:checked::after{content:"\2713";position:absolute;inset:0;color:#f2f7fb;font-size:12px;
+    display:flex;align-items:center;justify-content:center;}
+  .item .txt{font-size:14.5px;}
+  .item .txt b{font-weight:700;}
+  .item .txt .d{display:block;color:var(--muted);font-size:13px;margin-top:2px;}
+  .item.checked .txt{text-decoration:line-through;text-decoration-color:var(--silver);color:var(--muted);}
+
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:40px;}
+  .foot .rp{font-family:var(--serif);font-size:17px;color:var(--primary);margin-bottom:5px;}
+</style>
+
+<div class="masthead">
+  <p class="eyebrow">Red Pin Geek</p>
+  <h1>Mikel Grant Jewellery</h1>
+  <p class="sub">Search and AI visibility, built around your gemstone collections &nbsp;&middot;&nbsp; for Mikel</p>
+  <span class="status"><span class="dot"></span> Starting point captured &nbsp;&middot;&nbsp; collection work is next</span>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <p class="label">Timeline</p>
+    <div class="timeline">
+      <div class="card milestone m-done">
+        <div class="m-ico">&#10003;</div>
+        <div class="m-date">5 August 2026</div>
+        <div class="m-title">We started</div>
+        <div class="m-note">Snapshot, collection architecture for up to six collections, and search measurement set up.</div>
+        <span class="m-tag">Complete</span>
+      </div>
+      <div class="card milestone m-done">
+        <div class="m-ico">&#10003;</div>
+        <div class="m-date">27 August 2026</div>
+        <div class="m-title">Visibility Snapshot</div>
+        <div class="m-note">Four AI tools asked the same six buyer questions, so we know exactly where you are and are not showing up.</div>
+        <span class="m-tag">Complete</span>
+      </div>
+      <div class="card milestone m-done">
+        <div class="m-ico">&#10003;</div>
+        <div class="m-date">31 August 2026</div>
+        <div class="m-title">Google measurement live</div>
+        <div class="m-note">Search Console is connected and reporting. Your first Google numbers are below.</div>
+        <span class="m-tag">Complete</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Where you are starting</p>
+    <div class="metrics">
+      <div class="card metric"><div class="n">304</div><div class="k">Products, all with descriptions</div></div>
+      <div class="card metric"><div class="n">49</div><div class="k">Collections on your site</div></div>
+      <div class="card metric"><div class="n">3<span style="font-size:20px">/24</span></div><div class="k">AI answers that pick you</div></div>
+      <div class="card metric"><div class="n">15</div><div class="k">Gemstone collections with no words</div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">What is complete</p>
+    <div class="card">
+      <div class="panel">
+        <div class="row"><span class="check">&#10003;</span><div><b>Visibility Snapshot delivered.</b>
+        <span class="s">Four AI tools, six real buyer questions, twenty-four answers, all measured on the
+        same day. It tells you where you get recommended, where you do not, and the reason for the
+        difference.</span></div></div>
+        <div class="row"><span class="check">&#10003;</span><div><b>Google Search Console set up and reporting.</b>
+        <span class="s">This is the tool that shows what real people typed into Google and where your pages
+        appeared. It is now connected to your site and collecting. One thing worth knowing: Google only
+        starts counting from the day a site is connected, and it cannot be backdated. So this is genuinely
+        day one of your record, which also makes it a clean before picture for the work ahead.</span></div></div>
+        <div class="row"><span class="check">&#10003;</span><div><b>Your site was checked for anything blocking you.</b>
+        <span class="s">Nothing is. All seven AI tools that read websites are allowed in, and your site map
+        lists all 300 products and all 49 collections. Being found is not your problem. Being worth
+        recommending is the part we are working on.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">What we are tracking</p>
+    <div class="card">
+      <div class="cite-head">
+        <div class="big">You are recommended for the one question your website answers <em>in plain words</em>,
+        and absent from every question it does not.</div>
+      </div>
+
+      <!-- FRAME:two-doors -->
+      <div class="watch" style="padding-top:10px;">
+        <p><strong>There are two different doors into your shop, and they no longer open together.</strong></p>
+        <p>For years being findable meant one thing: showing up high in Google&rsquo;s list of blue links.
+        That still matters, and plenty of your customers shop exactly that way.</p>
+        <p>But a growing number never see that list. They ask an assistant a question in plain English and
+        get back one answer, with a few makers <strong>named</strong> in it. Being named in that answer is a
+        different thing from showing up high in Google&rsquo;s list, and the two have come apart. Being
+        strong in one does not carry you in the other.</p>
+        <p>So this section has two parts. The first asks: <em>do assistants name you?</em> The second asks:
+        <em>where do you sit in Google&rsquo;s list?</em> You are a striking example of the two disagreeing,
+        and that disagreement is exactly where the opportunity is.</p>
+      </div>
+      <!-- /FRAME -->
+
+      <p class="lead" style="padding-top:12px;"><strong>Four words used below, in plain terms.</strong>
+      Being <strong>named</strong> is when an assistant mentions you anywhere in its answer.
+      Being <strong>picked</strong> is stronger: the assistant puts you forward as the answer, not as one
+      of a list. A <strong>listing</strong> is one time your page appeared in somebody&rsquo;s Google
+      results. Your <strong>spot</strong> is how far down that Google list you were, where 1st to 10th is
+      the first page and almost nobody scrolls past it. A <strong>click from Google</strong> is somebody
+      seeing your listing and choosing to open it.</p>
+
+      <p class="lead" style="padding-top:10px;"><strong>1. Door one: do AI assistants name you?</strong>
+      Six questions a real buyer would ask, put to four different AI tools on 27 August. Twenty-four
+      answers in total.</p>
+      <div class="tablewrap">
+      <table class="mtable">
+        <tr><th>The buyer question</th><th>What happened</th></tr>
+        <tr><td>Independent makers of one-of-a-kind gemstone jewellery</td><td class="v">Not named, 0 of 4</td></tr>
+        <tr><td>Handmade jewellery from an independent Canadian designer near the Sunshine Coast</td><td class="v win">Picked by 3 of 4</td></tr>
+        <tr><td>Designers who specialise in moonstone, turquoise or opal</td><td class="v">Not named, 0 of 4</td></tr>
+        <tr><td>Nature-inspired, west coast or artisan silversmith jewellery</td><td class="v">Not named, 0 of 4</td></tr>
+        <tr><td>Designers who work in ammolite or fossil</td><td class="v">Not named, 0 of 4</td></tr>
+        <tr><td>Ethical one-of-a-kind instead of mass-produced</td><td class="v">Not named, 0 of 4</td></tr>
+      </table>
+      </div>
+      <div class="note">On the question you win, three of the four tools put you forward as the answer and
+      called you things like the strongest local maker. The fourth named you first but inside a list of
+      seven makers with no particular recommendation, which is a real difference and worth knowing: being
+      mentioned is not the same as being chosen.</div>
+
+      <p class="lead" style="padding-top:14px;"><strong>2. Door two: where do you sit in Google&rsquo;s list?</strong>
+      Your first six days of Google data, 26 to 31 August.</p>
+      <div class="tablewrap">
+      <table class="mtable">
+        <tr><th>&nbsp;</th><th>First 6 days</th></tr>
+        <tr><td>Times your pages appeared in Google results</td><td class="v">8,526</td></tr>
+        <tr><td>Clicks from Google</td><td class="v">63</td></tr>
+        <tr><td>Different search terms you appeared for</td><td class="v">1,105</td></tr>
+        <tr><td>Different pages of yours that appeared</td><td class="v">358</td></tr>
+      </table>
+      </div>
+      <!-- CAVEAT:click-attribution --><div class="note">One honest limit on that clicks number. This table
+      can only see Google. It does not mean nobody else reached you: when an assistant names you and
+      somebody comes straight to your shop, Google never sees that visit at all. Some people click straight
+      through and your own site analytics catch them, but plenty read the answer and then simply type your
+      name into their browser, which arrives looking identical to somebody who already knew you. This is
+      genuinely hard to count, and anybody who says they can measure it precisely is selling something. In
+      practice it means the effect of being named is almost certainly larger than any number here can show,
+      not smaller.</div><!-- /CAVEAT -->
+
+      <div class="watch">
+        <p><strong>The finding that explains both tables.</strong> Your home page says Sunshine Coast, in
+        plain words, on the page. That is the one question the assistants get right about you. Fifteen of
+        your seventeen gemstone collection pages have no words on them at all, so when somebody asks about
+        moonstone or turquoise or opal, there is nothing on your site for a machine to read and repeat.
+        The pattern is that exact, and it is the whole case for the work ahead.</p>
+        <p><strong>You are not short of writing, and this is the encouraging part.</strong> All 304 of your
+        products carry a description, and eight of your story collections carry your own writing, some of
+        it 800 characters and genuinely lovely. The gap is not ability. It is that the writing never
+        reached the gemstone pages, which are exactly the ones buyers search for.</p>
+        <p><strong>Turquoise is the clearest opening you have.</strong> Google already puts your turquoise
+        guide in the top ten, and around forty different turquoise questions bring up your pages between
+        the 5th and 12th spot. Yet not one AI tool names you when somebody asks for a turquoise specialist.
+        The reputation is already built. It simply is not reaching the assistants, and that is a much
+        easier problem than starting from nothing.</p>
+        <p><strong>Your biggest near-miss on Google.</strong> Your guide on the difference between solid
+        gold, gold filled, gold vermeil and gold plated appeared 1,644 times in six days, sitting around
+        the 7th spot, and was opened once. People are being shown it and choosing not to click, which
+        almost always means the title and description in the results are not pulling their weight. That is
+        a small fix with a large number behind it.</p>
+      </div>
+      <div class="note" style="border-top:1px solid var(--line);">Two honest limits. Six days is a short
+      window, so treat the direction as real and the exact figures as provisional until next month. And
+      these AI answers are one measurement on one day; assistants vary their wording every time they are
+      asked, so what we watch over time is whether your name keeps coming back, not whether any single
+      answer repeats.</div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Your next moves</p>
+    <div class="card">
+      <div class="progress-head">
+        <span class="t">Two things, and only the first is urgent</span>
+        <span class="c" id="counter">0 of 2 done</span>
+      </div>
+      <div class="bar"><i id="fill"></i></div>
+      <p class="lead">Check them off as you go; your progress saves on this device.</p>
+      <label class="item"><input type="checkbox" data-id="m1"><span class="txt"><b>1. Fill in the intake form</b><span class="d">This is the one thing holding up the collection work, and it is the only thing I need from you. It asks about your stones, your process and what you want each collection to say. Your answers are what keep the new pages sounding like you rather than like anybody else. If typing it out is the barrier, record a voice note on your phone and email it to me instead, and I will work from that.</span></span></label>
+      <label class="item"><input type="checkbox" data-id="m2"><span class="txt"><b>2. Approve the six collections</b><span class="d">I have drafted a recommendation for which six collections to build first, weighted toward the gemstones buyers actually search for. You get the final say. This one can wait until after the form.</span></span></label>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="rp">Red Pin Geek</div>
+    Snapshot 27 August 2026 &nbsp;&middot;&nbsp; Google measurement live 31 August 2026 &nbsp;&middot;&nbsp; next update once the collection pages are built
+  </div>
+</div>
+
+<script>
+  (function(){
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.item input'));
+    var counter = document.getElementById('counter'), fill = document.getElementById('fill');
+    var KEY = 'mg-cmd-v1-';
+    function refresh(){
+      var done = 0;
+      boxes.forEach(function(b){ b.closest('.item').classList.toggle('checked', b.checked); if(b.checked) done++; });
+      counter.textContent = done + ' of ' + boxes.length + ' done';
+      fill.style.width = (boxes.length ? (done/boxes.length*100) : 0) + '%';
+    }
+    boxes.forEach(function(b){
+      var id = KEY + b.getAttribute('data-id');
+      try { if(localStorage.getItem(id) === '1') b.checked = true; } catch(e){}
+      b.addEventListener('change', function(){ try { localStorage.setItem(id, b.checked?'1':'0'); } catch(e){} refresh(); });
+    });
+    refresh();
+  })();
+</script>
+
+</body>
+</html>
